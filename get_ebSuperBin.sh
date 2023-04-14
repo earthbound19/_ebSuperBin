@@ -1,3 +1,11 @@
+# DESCRIPTION
+# Retrieves an archive of binaries associated with this repository (a supercollection of executable utilities etc), checks it for a hard-coded checksum match, and if a match if found, wipes and re-clones this repository and extracts the associated binaries archive over it.
+
+# DEPENDENCIES
+# git, wget
+
+
+# CODE
 pushd .
 cd ..
 
@@ -13,11 +21,13 @@ echo "$checksum"
 # because if you echo the variable name of an array it prints the first element, this works:
 if [ "$sha256arr" == "$checksum" ]
 then
-	echo "Match. Will extract archive."
+	echo "Match. Will wipe and recreate git repository and extract associated binary archive."
+	rm -rf _ebSuperBin
+	git clone https://github.com/earthbound19/_ebSuperBin
 	7z x -y _ebSuperBin.7z
 	echo "Archive extracted."
 else
-	echo "NO MATCH. Did not extract archive."
+	echo "NO MATCH. No repository wipe and refresh or archive extract operations performed."
 fi
 
 rm ./_ebSuperBin.7z
