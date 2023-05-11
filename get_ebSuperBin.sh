@@ -4,8 +4,19 @@
 # DEPENDENCIES
 # git, wget
 
+# USAGE
+# From a bash terminal in the same directory as this script, run it:
+#    ./get_ebSuperBin.sh
+
 
 # CODE
+# WORKING PATH CHECK
+# Check for calling this script from anywhere else if it is in the PATH (re https://stackoverflow.com/a/179231); get full path to script minus file name, then refuse to run if the current path is not the same as the path this script is in.
+thisScriptsPath=$(dirname $(readlink -f $0))
+workingPath=$(pwd)
+if [ "$thisScriptsPath" != "$workingPath" ]; then echo "PROBLEM: working path may not be the same as script. Try again from the same directory as this script, as ./get_ebSuperBin.sh. Exit."; exit 1; fi
+
+# MAIN FUNCTIONALITY
 pushd .
 cd ..
 
