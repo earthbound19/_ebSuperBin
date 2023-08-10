@@ -1,5 +1,5 @@
 # DESCRIPTION
-# Retrieves an archive of binaries associated with this repository (a supercollection of executable utilities etc), checks it for a hard-coded checksum match, and if a match if found, wipes and re-clones this repository and extracts the associated binaries archive over it.
+# Retrieves an archive of binaries associated with this repository (a supercollection of executable utilities etc), checks it for a hard-coded checksum match, and if a match is found, wipes and re-clones this repository and extracts the associated binaries archive over it.
 
 # DEPENDENCIES
 # git, wget
@@ -25,7 +25,7 @@ echo "Downloading _ebSuperBin.7z . . ."
 wget https://earthbound.io/data/dist/_ebSuperBin.7z
 
 sha256arr=( $(sha256sum ./_ebSuperBin.7z) )
-checksum='d693dc81f7178f2b239a3b64b47a0721fe83cf049a3bdc7ce6168ff7724ed842'
+checksum='36d4966ae9a7deeae059258faeb55eab1fc8c3dea22bb440db3b1184cc7b7c6b'
 
 echo "Checking sha256 sum of downloaded archive for match of:"
 echo "$checksum"
