@@ -25,7 +25,7 @@ echo "Downloading _ebSuperBin.7z . . ."
 wget https://earthbound.io/data/dist/_ebSuperBin.7z
 
 sha256arr=( $(sha256sum ./_ebSuperBin.7z) )
-checksum='03847ccd853dc52d24c95a41c2ec7c5c5908621becd4acf4f84be864277e210a'
+checksum='f4b1446284bee0141d27e459b89c233e6e1817b7851ccc204e883a9f5473722f'
 
 echo "Checking sha256 sum of downloaded archive for match of:"
 echo "$checksum"
